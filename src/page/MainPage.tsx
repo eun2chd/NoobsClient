@@ -15,7 +15,7 @@ const MainPage = () => {
     const fetchData = async () => {
       try {
         const [response] = await Promise.all([
-          apiCall("https://www.noobsapp.store:8000/noobs/friendUserBr", "get", null),
+          apiCall("www.noobsapp.store/noobs/friendUserBr", "get", null),
         ]);
         setAllUsers(response.data.data);
       } catch (error) {
