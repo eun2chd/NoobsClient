@@ -4,6 +4,7 @@ import DesktopMainPage from "./Desktop-MainPage";
 import axios, { AxiosError } from "axios";  // axios를 import
 import { User } from "../commonTypes";
 import apiCall from "../Api/Api";
+import apiCallFetch from "../Api/Apifetch";
 import Swal from "sweetalert2";
 
 const MainPage = () => {
@@ -15,7 +16,7 @@ const MainPage = () => {
     const fetchData = async () => {
       try {
         const [response] = await Promise.all([
-          apiCall("https://www.noobsapp.store/noobs/friendUserBr", "get", { withCredentials: true}),
+          apiCallFetch("https://noobs/friendUserBr", "GET"),
         ]);
         setAllUsers(response.data.data);
       } catch (error) {
